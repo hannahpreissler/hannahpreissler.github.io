@@ -177,7 +177,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>This is my lead. But I am not going to use words like my and me and I because that’s unprofessional.</p>
+<p>Nebraska volleyball has had a rich history over the last decade. It's no surprise that the Huskers are keeping traditions alive through the 2023 season. They are the&nbsp; No.&nbsp;1 ranked team in the nation and are the only undefeated team going into their last five regular season games.&nbsp;<br>
+</p>
+<p>(add transition)&nbsp;</p>
+<p>This raises the question, is Nebraska's success accredited to their offense or defense?</p>
+<p>A closer look into key statistics such as hitting percentage and opponent hitting percentage provides insight into a team's overall efficiency. The Huskers hit .288 against their opponents while keeping their opponents at an impressive .135. Here's a glimpse at the top 25 ranked teams and their overall efficiency.&nbsp;</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -284,12 +288,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>Nebraska doesn’t quite pass Wisconsin and Pittsburgh in hitting percentage but keeping their opponent hitting percentage low allows them to be successful on the court. Because the Huskers can create a gap between their opponents, Nebraska has more opportunities to score on other teams.</p>
+<p>When it comes to hitting, where exactly are the Huskers ranked? Taking a closer look at kills per set and team kills, can bring clarity Nebraska’s offensive efficiency.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>offense, <span class="fu">aes</span>(<span class="at">x=</span>Kills, <span class="at">y=</span><span class="st">`</span><span class="at">Per Set</span><span class="st">`</span>), <span class="at">color=</span><span class="st">"lightgrey"</span>) <span class="sc">+</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>joined_top15, <span class="fu">aes</span>(<span class="at">x=</span>Kills, <span class="at">y=</span><span class="st">`</span><span class="at">Per Set</span><span class="st">`</span>), <span class="at">color=</span><span class="st">"darkblue"</span>) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>joined_top15, <span class="fu">aes</span>(<span class="at">x=</span>Kills, <span class="at">y=</span><span class="st">`</span><span class="at">Per Set</span><span class="st">`</span>), <span class="at">color=</span><span class="st">"blue"</span>) <span class="sc">+</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>nu, <span class="fu">aes</span>(<span class="at">x=</span>Kills, <span class="at">y=</span><span class="st">`</span><span class="at">Per Set</span><span class="st">`</span>), <span class="at">color=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>nu, <span class="fu">aes</span>(<span class="at">x=</span>Kills, <span class="at">y=</span><span class="st">`</span><span class="at">Per Set</span><span class="st">`</span>, <span class="at">label=</span>Team), <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Team Kills"</span>,</span>
@@ -310,6 +316,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>The Huskers are in the upper quartile for kills per set and are towards the middle of the pack when it comes to total team kills.</p>
+<p>What exactly does this mean for Nebraska’s offense?</p>
+<p>The Huskers sweep most of their opponents therefore they are playing less sets resulting in less opportunities to rack up kills compared to teams who are regularly playing five sets.</p>
+<p>Now looking at defense, Nebraska</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
