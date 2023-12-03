@@ -253,8 +253,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>), </span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_textbox_simple</span>(<span class="at">size=</span><span class="dv">9</span>), </span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>   )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
@@ -262,7 +261,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Understanding the sheer amount of time that he has had to develop as a pole vaulter, is very important when looking at what makes Mondo the best pole vaulter in the world.<br>
 </p>
-<p>With the Olympics being in 2020, (Technically completed in 2021 due to COVID-19) this is a good season to compare Mondo's stats to his competitors. Among the other top ten pro vaulters in the world, Mondo averaged the highest bars cleared, averaged the best place finishes, and competed in the third most meets. He is by far, the most consistent vaulter which allows him to succeed on the runway.</p>
+<p>With the Olympics being in 2020, (Technically completed in 2021 due to COVID-19) this is a good season to compare Mondo’s stats to his competitors. Among the other top ten pro vaulters in the world, Mondo averaged the highest bars cleared, averaged the best place finishes, and competed in the third most meets. He is by far, the most consistent vaulter which allows him to succeed on the runway.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -273,40 +272,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Competitions =</span> <span class="fu">n</span>(),</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">AvgResult =</span> <span class="fu">mean</span>(Result),</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">AvgPlace =</span> <span class="fu">mean</span>(Place)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>mondocomps <span class="ot">&lt;-</span> competitionresults <span class="sc">|&gt;</span> </span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Name <span class="sc">==</span> <span class="st">"Mondo Duplantis"</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>chriscomps <span class="ot">&lt;-</span> competitionresults <span class="sc">|&gt;</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_trim</span>(Name) <span class="sc">==</span> <span class="st">"Chris Nilsen"</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>ernestcomps <span class="ot">&lt;-</span> competitionresults <span class="sc">|&gt;</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Name <span class="sc">==</span> <span class="st">"Ernest John Obiena"</span>)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>kccomps <span class="ot">&lt;-</span> competitionresults <span class="sc">|&gt;</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Name<span class="sc">==</span> <span class="st">"KC Lightfoot"</span>)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>                      </span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>competitionresults,<span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">size=</span> Competitions), <span class="at">color=</span><span class="st">"lightgrey"</span>)<span class="sc">+</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>mondocomps, <span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">size=</span> Competitions), <span class="at">color=</span><span class="st">"purple"</span>)<span class="sc">+</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>ernestcomps, <span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">size=</span> Competitions), <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_point</span>(<span class="at">data=</span>chriscomps, <span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">size=</span> Competitions), <span class="at">color=</span><span class="st">"darkblue"</span>)<span class="sc">+</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>mondocomps, <span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">label=</span>Name), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>chriscomps, <span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">label=</span>Name), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>ernestcomps, <span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">label=</span>Name), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>kccomps, <span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">label=</span>Name), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Top 10 Pro Pole Vaulters: A Spotlight on 2020 Season Achievements"</span>, </span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span><span class="st">"Mondo is constantly winning meets and jumping the highest against top performers repeatedly."</span>, </span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">y=</span><span class="st">"Height (Meters)"</span>, </span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">x=</span><span class="st">"Aveage Placing at Competitions"</span>,</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption=</span><span class="st">"Source: World Athletics | By: Hannah Preissler"</span>) <span class="sc">+</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>), </span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_textbox_simple</span>(<span class="at">size=</span><span class="dv">9</span>), </span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">AvgPlace =</span> <span class="fu">mean</span>(Place))</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>mondocomps <span class="ot">&lt;-</span> competitionresults <span class="sc">|&gt;</span> </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Name <span class="sc">==</span> <span class="st">"Mondo Duplantis"</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>chriscomps <span class="ot">&lt;-</span> competitionresults <span class="sc">|&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_trim</span>(Name) <span class="sc">==</span> <span class="st">"Chris Nilsen"</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>ernestcomps <span class="ot">&lt;-</span> competitionresults <span class="sc">|&gt;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Name <span class="sc">==</span> <span class="st">"Ernest John Obiena"</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>kccomps <span class="ot">&lt;-</span> competitionresults <span class="sc">|&gt;</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Name<span class="sc">==</span> <span class="st">"KC Lightfoot"</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>                      </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>competitionresults,<span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">size=</span> Competitions), <span class="at">color=</span><span class="st">"lightgrey"</span>)<span class="sc">+</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>mondocomps, <span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">size=</span> Competitions), <span class="at">color=</span><span class="st">"maroon"</span>)<span class="sc">+</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>ernestcomps, <span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">size=</span> Competitions), <span class="at">color=</span><span class="st">"lightblue"</span>)<span class="sc">+</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_point</span>(<span class="at">data=</span>chriscomps, <span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">size=</span> Competitions), <span class="at">color=</span><span class="st">"darkblue"</span>)<span class="sc">+</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>mondocomps, <span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">label=</span>Name), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>chriscomps, <span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">label=</span>Name), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>ernestcomps, <span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">label=</span>Name), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>kccomps, <span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">label=</span>Name), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Top 10 Pro Pole Vaulters: A Spotlight on 2020 Season Achievements"</span>, </span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span><span class="st">"Mondo is constantly winning meets and jumping the highest against top performers repeatedly."</span>, </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">y=</span><span class="st">"Height (Meters)"</span>, </span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">x=</span><span class="st">"Aveage Placing at Competitions"</span>,</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption=</span><span class="st">"Source: World Athletics | By: Hannah Preissler"</span>) <span class="sc">+</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>), </span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_textbox_simple</span>(<span class="at">size=</span><span class="dv">9</span>), </span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
@@ -314,8 +312,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>The final component that contributes to Mondo being the most dominant pole vaulter is his ability to break the world record… more than once.</p>
 <p>The world record data dates back to 1912 and has been pushed higher and higher throughout the years while being passed from athlete to athlete with two standing out among the others.</p>
-<p>Sergey Bubka is a former Ukrainian pole vaulter who pioneered the sport. Many vaulters look to him as the picture of technique when it comes to vaulting. Sergey first broke the world record in 1984 clearing 5.94 m (19’5”). He continued to break his world record sixteen more times over his career clearing 6.14 m (20’1”). Sergey’s world record reign is highlighted by the light blue lines.</p>
-<p>Mondo took off right where Sergey left off. Again, in his rookie year, he broke the world record by clearing 6.17 m (20’2”). He has continued to break this record six times since 2020.</p>
+<p>Sergey Bubka is a former Ukrainian pole vaulter who pioneered the sport. Many vaulters look to him as the picture of technique when it comes to vaulting. Sergey first broke the world record in 1984 clearing 5.94 m (19’5”). He continued to break his world record sixteen more times over his career clearing 6.14 m (20’1”). Sergey’s world record reign is highlighted by the maroon lines.</p>
+<p>Mondo took off right where Sergey left off. Again, in his rookie year, he broke the world record by clearing 6.17 m (20’2”). He has continued to break this record six times since 2020. Mondo’s world records are highlighted by the dark blue lines.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -331,28 +329,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_lollipop</span>(<span class="at">data=</span>worldrecord, <span class="fu">aes</span>(<span class="at">y=</span>Meters, <span class="at">x=</span>Date), <span class="at">horizontal =</span> <span class="cn">FALSE</span>, <span class="at">color =</span><span class="st">"grey"</span>)<span class="sc">+</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_lollipop</span>(<span class="at">data=</span>sergeywr, <span class="fu">aes</span>(<span class="at">y=</span>Meters, <span class="at">x=</span>Date), <span class="at">horizontal =</span> <span class="cn">FALSE</span>, <span class="at">color=</span><span class="st">"lightblue"</span>)<span class="sc">+</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_lollipop</span>(<span class="at">data=</span>mondowr, <span class="fu">aes</span>(<span class="at">y=</span>Meters, <span class="at">x=</span>Date), <span class="at">horizontal =</span> <span class="cn">FALSE</span>, <span class="at">color=</span><span class="st">"darkblue"</span>)<span class="sc">+</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Exploring the Progression of the Pole Vault World Record Holders"</span>, </span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span><span class="st">"Sergey Bubka and Mondo Duplantis have broken the WR the most times of anyone."</span>, </span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">y=</span><span class="st">"Height (Meters)"</span>, </span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">x=</span><span class="st">""</span>,</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption=</span><span class="st">"Source: World Athletics | By: Hannah Preissler"</span>) <span class="sc">+</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>), </span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_textbox_simple</span>(<span class="at">size=</span><span class="dv">9</span>), </span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_lollipop</span>(<span class="at">data=</span>sergeywr, <span class="fu">aes</span>(<span class="at">y=</span>Meters, <span class="at">x=</span>Date), <span class="at">horizontal =</span> <span class="cn">FALSE</span>, <span class="at">color=</span><span class="st">"maroon"</span>)<span class="sc">+</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_lollipop</span>(<span class="at">data=</span>mondowr, <span class="fu">aes</span>(<span class="at">y=</span>Meters, <span class="at">x=</span>Date), <span class="at">horizontal =</span> <span class="cn">FALSE</span>, <span class="at">color=</span><span class="st">"darkblue"</span>)<span class="sc">+</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">as.Date</span>(<span class="st">"2001-05-01"</span>), <span class="at">y=</span><span class="fl">4.5</span>, <span class="at">label=</span><span class="st">"Sergey Bubka"</span>), <span class="at">color=</span><span class="st">"maroon"</span>, <span class="at">size=</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">as.Date</span>(<span class="st">"2011-05-01"</span>), <span class="at">y=</span><span class="fl">3.5</span>, <span class="at">label=</span><span class="st">"Mondo Duplantis"</span>), <span class="at">color=</span><span class="st">"darkblue"</span>, <span class="at">size=</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Exploring the Progression of the Pole Vault World Record Holders"</span>, </span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span><span class="st">"Sergey Bubka and Mondo Duplantis have broken the WR the most times of anyone."</span>, </span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">y=</span><span class="st">"Height (Meters)"</span>, </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">x=</span><span class="st">""</span>,</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption=</span><span class="st">"Source: World Athletics | By: Hannah Preissler"</span>) <span class="sc">+</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>), </span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_textbox_simple</span>(<span class="at">size=</span><span class="dv">9</span>), </span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Mondo’s impressive pole vault career is far from over, making him the current best pole vaulter in the world.</p>
-<p>Will the rest of his career write him the title of being the all-time best pole vaulter in the world?</p>
+<p>Mondo’s impressive pole vault career is far from over, making him the current best pole vaulter in the world. Will the rest of his career write him the title of being the all-time best pole vaulter in the world?</p>
 
 
 
