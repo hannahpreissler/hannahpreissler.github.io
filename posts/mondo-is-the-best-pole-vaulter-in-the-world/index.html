@@ -178,11 +178,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Who is Armand ‘Mondo’ Duplantis?</p>
-<p>Mondo Duplantis is a Swedish-American pole vaulter who has taken the sport to new heights, constantly raising the bar and breaking his world records again and again. He began his vaulting career at the young age of four. Mondo’s father, Greg Duplantis, was an All-American pole vaulter at LSU and sparked Mondo’s passion at a very young age. His remarkable charted progression goes back to when he was six years old. There is no other vaulter in the world that has a record this detailed.</p>
+<p>Mondo Duplantis is a Swedish-American pole vaulter who has taken the sport to new heights, constantly raising the bar and breaking his world records again and again. He began his vaulting career at the young age of four. Mondo’s father, Greg Duplantis, was an All-American pole vaulter at LSU and sparked Mondo’s passion at a very young age. His remarkable charted progression goes back to when he was six years old. There is no other vaulter in the world that has a record this detailed.&nbsp;</p>
 <p>Let’s break down what makes Mondo the best pole vaulter in the world.</p>
-<p>As the saying goes, practice makes perfect. That’s exactly what has helped contribute to Mondo’s success. Since he started at such a young age, he had nearly ten more years of practice and experience under his belt compared to his peers. In his freshman year of high school, he was already jumping 4.87m (16’). With this impressive mark, he ultimately had no competition that could even touch the bars he was jumping at.</p>
-<p>His career continued to take off after high school as he broke the 6-meter barrier (which is a huge accomplishment for any male vaulter) in his first (and only) year of college at his father’s alma mater LSU.</p>
-<p>After finishing his first year at LSU he decided to go pro and has flourished. In fact, he broke the world record in his rookie year.</p>
+<p>As the saying goes, practice makes perfect. That’s exactly what has helped contribute to Mondo’s success. Since he started at such a young age, he had nearly ten more years of practice and experience than his peers. In his freshman year of high school, he was already jumping 4.87m (16’). With this impressive mark, he ultimately had no competition that could even touch the bars he was jumping at.&nbsp;</p>
+<p>His career continued to take off after high school as he broke the 6-meter barrier (a huge accomplishment for any male vaulter) in his first (and only) year of college at his father’s alma mater LSU.&nbsp;</p>
+<p>After finishing his first year at LSU he decided to go pro and has flourished. He broke the world record in his rookie year.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -260,6 +260,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>Understanding the sheer amount of time that he has had to develop as a pole vaulter, is very important when looking at what makes Mondo the best pole vaulter in the world.<br>
+</p>
+<p>With the Olympics being in 2020, (Technically completed in 2021 due to COVID-19) this is a good season to compare Mondo's stats to his competitors. Among the other top ten pro vaulters in the world, Mondo averaged the highest bars cleared, averaged the best place finishes, and competed in the third most meets. He is by far, the most consistent vaulter which allows him to succeed on the runway.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -309,6 +312,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>The final component that contributes to Mondo being the most dominant pole vaulter is his ability to break the world record… more than once.</p>
+<p>The world record data dates back to 1912 and has been pushed higher and higher throughout the years while being passed from athlete to athlete with two standing out among the others.</p>
+<p>Sergey Bubka is a former Ukrainian pole vaulter who pioneered the sport. Many vaulters look to him as the picture of technique when it comes to vaulting. Sergey first broke the world record in 1984 clearing 5.94 m (19’5”). He continued to break his world record sixteen more times over his career clearing 6.14 m (20’1”). Sergey’s world record reign is highlighted by the light blue lines.</p>
+<p>Mondo took off right where Sergey left off. Again, in his rookie year, he broke the world record by clearing 6.17 m (20’2”). He has continued to break this record six times since 2020.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -327,7 +334,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_lollipop</span>(<span class="at">data=</span>sergeywr, <span class="fu">aes</span>(<span class="at">y=</span>Meters, <span class="at">x=</span>Date), <span class="at">horizontal =</span> <span class="cn">FALSE</span>, <span class="at">color=</span><span class="st">"lightblue"</span>)<span class="sc">+</span></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_lollipop</span>(<span class="at">data=</span>mondowr, <span class="fu">aes</span>(<span class="at">y=</span>Meters, <span class="at">x=</span>Date), <span class="at">horizontal =</span> <span class="cn">FALSE</span>, <span class="at">color=</span><span class="st">"darkblue"</span>)<span class="sc">+</span></span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Exploring the Progression of the Pole Vault World Record Holders"</span>, </span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span><span class="st">"Sergey Bubka and Mondo Duplantis have held the WR the most times of anyone."</span>, </span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span><span class="st">"Sergey Bubka and Mondo Duplantis have broken the WR the most times of anyone."</span>, </span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">y=</span><span class="st">"Height (Meters)"</span>, </span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">x=</span><span class="st">""</span>,</span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption=</span><span class="st">"Source: World Athletics | By: Hannah Preissler"</span>) <span class="sc">+</span></span>
@@ -344,6 +351,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>Mondo’s impressive pole vault career is far from over, making him the current best pole vaulter in the world.</p>
+<p>Will the rest of his career write him the title of being the all-time best pole vaulter in the world?</p>
 
 
 
