@@ -182,7 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Let’s break down what makes Mondo the best pole vaulter in the world.</p>
 <p>As the saying goes, practice makes perfect. That’s exactly what has helped contribute to Mondo’s success. Since he started at such a young age, he had nearly ten more years of practice and experience than his peers. In his freshman year of high school, he was already jumping 4.87m (16’). With this impressive mark, he ultimately had no competition that could even touch the bars he was jumping at.&nbsp;</p>
 <p>His career continued to take off after high school as he broke the 6-meter barrier (a huge accomplishment for any male vaulter) in his first (and only) year of college at his father’s alma mater LSU.&nbsp;</p>
-<p>After finishing his first year at LSU he decided to go pro and has flourished. He broke the world record in his rookie year.</p>
+<p>After finishing his first year at LSU he decided to go pro and has flourished ever since. He had an outstanding rookie year, breaking the pole vault world record.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -261,7 +261,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Understanding the sheer amount of time that he has had to develop as a pole vaulter, is very important when looking at what makes Mondo the best pole vaulter in the world.<br>
 </p>
-<p>With the Olympics being in 2020, (Technically completed in 2021 due to COVID-19) this is a good season to compare Mondo’s stats to his competitors. Among the other top ten pro vaulters in the world, Mondo averaged the highest bars cleared, averaged the best place finishes, and competed in the third most meets. He is by far, the most consistent vaulter which allows him to succeed on the runway.</p>
+<p>With the Olympics being in 2020, (Technically completed in 2021 due to COVID-19) this is a good season to compare Mondo’s stats to his competitors. Among the other top ten pro vaulters in the world, Mondo averaged the highest bars cleared, averaged the best place finishes, and competed in the third most meets. He is by far, the most consistent vaulter which allows him to succeed on the runway. Even the next two highest ranked vaulters, Ernest John Obiena and Chris Nilsen, aren’t jumping as consistent as Mondo setting him apart from others.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -291,20 +291,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>mondocomps, <span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">label=</span>Name), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>chriscomps, <span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">label=</span>Name), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>ernestcomps, <span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">label=</span>Name), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>kccomps, <span class="fu">aes</span>(<span class="at">x=</span>AvgPlace, <span class="at">y=</span>AvgResult, <span class="at">label=</span>Name), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Top 10 Pro Pole Vaulters: A Spotlight on 2020 Season Achievements"</span>, </span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span><span class="st">"Mondo is constantly winning meets and jumping the highest against top performers repeatedly."</span>, </span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">y=</span><span class="st">"Height (Meters)"</span>, </span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">x=</span><span class="st">"Aveage Placing at Competitions"</span>,</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption=</span><span class="st">"Source: World Athletics | By: Hannah Preissler"</span>) <span class="sc">+</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>), </span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_textbox_simple</span>(<span class="at">size=</span><span class="dv">9</span>), </span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Top 10 Pro Pole Vaulters: A Spotlight on 2020 Season Achievements"</span>, </span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span><span class="st">"Mondo is constantly winning meets and jumping the highest against top performers repeatedly."</span>, </span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">y=</span><span class="st">"Height (Meters)"</span>, </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">x=</span><span class="st">"Aveage Placing at Competitions"</span>,</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption=</span><span class="st">"Source: World Athletics | By: Hannah Preissler"</span>) <span class="sc">+</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>), </span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_textbox_simple</span>(<span class="at">size=</span><span class="dv">9</span>), </span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
@@ -312,7 +311,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>The final component that contributes to Mondo being the most dominant pole vaulter is his ability to break the world record… more than once.</p>
 <p>The world record data dates back to 1912 and has been pushed higher and higher throughout the years while being passed from athlete to athlete with two standing out among the others.</p>
-<p>Sergey Bubka is a former Ukrainian pole vaulter who pioneered the sport. Many vaulters look to him as the picture of technique when it comes to vaulting. Sergey first broke the world record in 1984 clearing 5.94 m (19’5”). He continued to break his world record sixteen more times over his career clearing 6.14 m (20’1”).</p>
+<p>The first one being Sergey Bubka who is a former Ukrainian pole vaulter who pioneered the sport. Many vaulters look to him as the picture of technique when it comes to vaulting. Sergey first broke the world record in 1984 clearing 5.94 m (19’5”). He continued to break his world record sixteen more times over his career clearing 6.14 m (20’1”).</p>
 <p>Mondo took off right where Sergey left off. Again, in his rookie year, he broke the world record by clearing 6.17 m (20’2”). He has continued to break this record six times since 2020.</p>
 <div class="cell">
 <details>
